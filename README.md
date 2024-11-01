@@ -4,7 +4,7 @@ def quick(arr, low, high):
     if low < high:
         pi = partition(arr, low, high)
         quick(arr, low, pi - 1)
-        quickt(arr, pi + 1, high)
+        quick(arr, pi + 1, high)
 def partition(arr, low, high):
     pivot = arr[high]
     i = (low - 1)
@@ -17,6 +17,6 @@ def partition(arr, low, high):
 n = 100000
 arr = [random.randint(1, 1000000) for _ in range(n)]
 start_time = time.time()
-quick_sort(arr, 0, n - 1)
+quick(arr, 0, n - 1)
 end_time = time.time()
 print("快速排序所用时间：", end_time - start_time, "秒")
